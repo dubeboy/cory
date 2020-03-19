@@ -1,4 +1,3 @@
 package za.co.dubedivine.androidapps.cory.model
 
-class ScreeningQuestion {
-}
+data class ScreeningQuestion(val question: String, val weight: Double)
