@@ -20,15 +20,17 @@ class MainActivity : AppCompatActivity() {
         tv_question.text = viewModel.firstQuestion().question
 
         btn_yes.setOnClickListener {
-            val question = viewModel.nextQuestion(true )
-            tv_question.text = question.second.question
-            Log.d(TAG, "should continue ${question.first} ")
+            val question = viewModel.nextQuestion(true)
+//            if (viewModel.shouldContinue(true))
+               tv_question.text = question.question
+            Log.d(TAG, "should continue $question ")
         }
 
         btn_no.setOnClickListener {
-            val question = viewModel.nextQuestion(false )
-            tv_question.text = question.second.question
-            Log.d(TAG, "should continue ${question.first} ")
+            val question = viewModel.nextQuestion(false)
+//            if (viewModel.shouldContinue(true))
+                tv_question.text = question.question
+            Log.d(TAG, "should continue $question ")
         }
     }
 
