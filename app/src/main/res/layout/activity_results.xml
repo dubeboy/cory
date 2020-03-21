@@ -35,7 +35,7 @@
         android:layout_marginBottom="32dp"
         android:gravity="center"
         android:textSize="23sp"
-        android:text="Based on your responses you do NOT need to be tested for COVID-19"
+        android:text="@string/isolate_your_self_for_14_days"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

@@ -5,4 +5,8 @@
     <string name="more_information">More Information</string>
     <string name="see_your_doctor">SEE YOUR DOCTOR</string>
     <string name="stay_at_home">STAY AT HOME</string>
+    <string name="negative">Based on your responses you do NOT need to be tested for COVID-19</string>
+    <string name="positive">Please call 911 or go directly to your nearest Emergency Department.</string>
+    <string name="speak_to_a_nurse">You should speak with a nurse about your symptoms.</string>
+    <string name="isolate_your_self_for_14_days">You should immediately limit your contact with others and isolate yourself at home.</string>
 </resources>
