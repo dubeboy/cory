@@ -3,4 +3,6 @@
     <string name="yes">Yes</string>
     <string name="no">No</string>
     <string name="more_information">More Information</string>
+    <string name="see_your_doctor">SEE YOUR DOCTOR</string>
+    <string name="stay_at_home">STAY AT HOME</string>
 </resources>
