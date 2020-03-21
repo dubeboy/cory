@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun nextQuestion(answer: Boolean) {
-        if (viewModel.canContinue) {
+        if (viewModel.canContinue(answer)) {
             val question = viewModel.nextQuestion(answer)
             tv_question.text = question?.question
             Log.d(TAG, "the question is this $question ")

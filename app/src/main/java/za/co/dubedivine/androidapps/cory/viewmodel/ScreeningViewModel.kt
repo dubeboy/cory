@@ -1,16 +1,21 @@
 package za.co.dubedivine.androidapps.cory.viewmodel
 
 import za.co.dubedivine.androidapps.cory.model.ScreeningQuestion
+import za.co.dubedivine.androidapps.cory.model.screeningdecisiontree.ScreeningNode
 import za.co.dubedivine.androidapps.cory.repository.local.ScreeningQuestionsRepository
 
 class ScreeningViewModel {
 
-    private val decisionTree = ScreeningQuestionsRepository.screeningQuestionsDecisionTree()
+    private var decisionTree: ScreeningNode? = ScreeningQuestionsRepository.screeningQuestionsDecisionTree()
 
-    val canContinue = !decisionTree.isTerminal()
-    val question: ScreeningQuestion? = decisionTree.parent
-    val terminalMessage = decisionTree.terminalMessage ?: ""
+    val question: ScreeningQuestion? = decisionTree?.parent
+    val terminalMessage = decisionTree?.terminalMessage ?: ""
 
-    fun nextQuestion(answer: Boolean): ScreeningQuestion? = decisionTree.nextNode(answer)?.parent
+    fun nextQuestion(answer: Boolean): ScreeningQuestion? {
+        val nextNode = decisionTree?.nextNode(answer)
+        decisionTree = nextNode
+        return nextNode?.parent
+    }
+    fun canContinue(answer: Boolean) = decisionTree?.isTerminal(answer) == false
 
 }
