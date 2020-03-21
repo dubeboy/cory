@@ -22,8 +22,6 @@ class ResultsActivity : AppCompatActivity() {
         val colorRes = if (isPositive) R.color.positive else R.color.negative
         root_view_results.setBackgroundColor(ResourcesCompat.getColor(resources, colorRes, null))
 
-        val status = if (isPositive) getString(R.string.positive) else getString(R.string.negative)
-        tv_your_status.text = status
     }
 
     companion object {

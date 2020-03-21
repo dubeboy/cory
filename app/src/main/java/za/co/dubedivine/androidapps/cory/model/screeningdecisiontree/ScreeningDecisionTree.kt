@@ -1,3 +1,4 @@
 package za.co.dubedivine.androidapps.cory.model.screeningdecisiontree
 
-data class ScreeningDecisionTree(val yes: ScreeningNode, val no: ScreeningNode)
+// name not good
+data class ScreeningDecisionTree(var yes: ScreeningNode, var no: ScreeningNode)

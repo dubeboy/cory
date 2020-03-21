@@ -9,11 +9,13 @@ class ScreeningViewModel {
     private var decisionTree: ScreeningNode? = ScreeningQuestionsRepository.screeningQuestionsDecisionTree()
 
     val question: ScreeningQuestion? = decisionTree?.parent
-    val terminalMessage = decisionTree?.terminalMessage ?: ""
+    var terminalMessage = ""
+
 
     fun nextQuestion(answer: Boolean): ScreeningQuestion? {
         val nextNode = decisionTree?.nextNode(answer)
-        decisionTree = nextNode
+        decisionTree = nextNode  // should be in ADT mananger
+        terminalMessage = nextNode?.terminalMessage ?: "" // not right
         return nextNode?.parent
     }
     fun canContinue(answer: Boolean) = decisionTree?.isTerminal(answer) == false

@@ -34,6 +34,8 @@ class MainActivity : AppCompatActivity() {
             tv_question.text = question?.question
             Log.d(TAG, "the question is this $question ")
         } else {
+            viewModel.nextQuestion(answer)
+
             showResultsActivity(answer, viewModel.terminalMessage)
         }
     }
@@ -41,4 +43,6 @@ class MainActivity : AppCompatActivity() {
     private fun showResultsActivity(isPostive: Boolean, terminalMessage: String) {
         ResultsActivity.startActivity(this, isPostive, terminalMessage)
     }
+
+
 }
