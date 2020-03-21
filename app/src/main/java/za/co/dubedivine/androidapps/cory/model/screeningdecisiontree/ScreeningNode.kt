@@ -8,10 +8,16 @@ data class ScreeningNode(val parent: ScreeningQuestion?, val nextNode: Screening
     *  these functions should be moved to ADT manager sort of class
     * */
 
-    fun isTerminal(answer: Boolean) = if (answer) nextNode?.yes?.terminalMessage != null else nextNode?.no?.terminalMessage != null
-
     fun nextNode(answer: Boolean): ScreeningNode? {
         return if (answer) nextNode?.yes  else nextNode?.no
     }
+
+    /*
+    *  we are peeking at the nxt node
+    * */
+
+    fun isTerminal(answer: Boolean) = if (answer) nextNode?.yes?.terminalMessage != null else nextNode?.no?.terminalMessage != null
+
+    fun terminalMessage(answer: Boolean) = if (answer) nextNode?.yes?.terminalMessage else nextNode?.no?.terminalMessage
 
 }

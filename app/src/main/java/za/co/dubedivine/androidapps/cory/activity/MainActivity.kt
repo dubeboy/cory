@@ -34,9 +34,7 @@ class MainActivity : AppCompatActivity() {
             tv_question.text = question?.question
             Log.d(TAG, "the question is this $question ")
         } else {
-            viewModel.nextQuestion(answer)
-
-            showResultsActivity(answer, viewModel.terminalMessage)
+            showResultsActivity(answer, viewModel.terminalMessage(answer))
         }
     }
 
