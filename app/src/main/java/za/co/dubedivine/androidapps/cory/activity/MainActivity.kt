@@ -17,22 +17,28 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        tv_question.text = viewModel.firstQuestion().question
+        tv_question.text = viewModel.question?.question ?: ""
 
         btn_yes.setOnClickListener {
-            val question = viewModel.nextQuestion(true)
-//            if (viewModel.shouldContinue(true))
-               tv_question.text = question.question
-            Log.d(TAG, "should continue $question ")
+            nextQuestion(true)
         }
 
         btn_no.setOnClickListener {
-            val question = viewModel.nextQuestion(false)
-//            if (viewModel.shouldContinue(true))
-                tv_question.text = question.question
-            Log.d(TAG, "should continue $question ")
+            nextQuestion(false)
         }
     }
 
+    private fun nextQuestion(answer: Boolean) {
+        if (viewModel.canContinue) {
+            val question = viewModel.nextQuestion(answer)
+            tv_question.text = question?.question
+            Log.d(TAG, "the question is this $question ")
+        } else {
+            showResultsActivity(answer, viewModel.terminalMessage)
+        }
+    }
 
+    private fun showResultsActivity(isPostive: Boolean, terminalMessage: String) {
+        ResultsActivity.startActivity(this, isPostive, terminalMessage)
+    }
 }

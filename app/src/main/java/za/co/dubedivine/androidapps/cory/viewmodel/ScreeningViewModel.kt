@@ -1,42 +1,16 @@
 package za.co.dubedivine.androidapps.cory.viewmodel
 
 import za.co.dubedivine.androidapps.cory.model.ScreeningQuestion
+import za.co.dubedivine.androidapps.cory.repository.local.ScreeningQuestionsRepository
 
 class ScreeningViewModel {
 
-    private val questions = screeningQuestions()
-    private var questionIndex: Int = 0
-    private var previousQuestion = screeningQuestions().first()
-    private var shouldContinue: Boolean = true
+    private val decisionTree = ScreeningQuestionsRepository.screeningQuestionsDecisionTree()
 
-    fun numberOfQuestions() = questions.size
+    val canContinue = !decisionTree.isTerminal()
+    val question: ScreeningQuestion? = decisionTree.parent
+    val terminalMessage = decisionTree.terminalMessage ?: ""
 
-    fun nextQuestion(answer: Boolean): ScreeningQuestion {
-        if (hasNotReachedEndOfQuestions()) previousQuestion = screeningQuestions()[questionIndex]
-        shouldContinue(answer)
-        questionIndex += 1
-        return when {
-            hasNotReachedEndOfQuestions() -> {
-                screeningQuestions()[questionIndex]
-            }
-            else -> {
-                previousQuestion
-            }
-        }
+    fun nextQuestion(answer: Boolean): ScreeningQuestion? = decisionTree.nextNode(answer)?.parent
 
-    }
-
-    private fun shouldContinue(answer: Boolean) {
-        if (shouldContinue) {
-            shouldContinue = previousQuestion.weight == 0.0 || (previousQuestion.weight == 1.0 && !answer)
-        }
-    }
-
-    fun firstQuestion(): ScreeningQuestion = screeningQuestions().first()
-
-    /**
-    *  private functions
-    * */
-
-    private fun hasNotReachedEndOfQuestions(): Boolean = questionIndex < numberOfQuestions()
 }
