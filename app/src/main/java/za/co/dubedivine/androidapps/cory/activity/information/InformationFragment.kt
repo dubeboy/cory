@@ -9,8 +9,6 @@ import android.view.View
 import android.view.ViewGroup
 import za.co.dubedivine.androidapps.cory.R
 
-import za.co.dubedivine.androidapps.cory.activity.information.dummy.DummyContent
-import za.co.dubedivine.androidapps.cory.repository.local.InformationRepository
 import za.co.dubedivine.androidapps.cory.viewmodel.InformationViewModel
 
 class InformationFragment : Fragment() {

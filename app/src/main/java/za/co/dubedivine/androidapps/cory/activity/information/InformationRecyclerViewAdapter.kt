@@ -1,5 +1,6 @@
 package za.co.dubedivine.androidapps.cory.activity.information
 
+import android.icu.text.IDNA
 import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
@@ -9,7 +10,6 @@ import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.content.res.ResourcesCompat
 import kotlinx.android.synthetic.main.item_fragment_information.view.*
 import za.co.dubedivine.androidapps.cory.R
-import za.co.dubedivine.androidapps.cory.activity.information.dummy.DummyContent.DummyItem
 import za.co.dubedivine.androidapps.cory.model.Information
 
 class InformationRecyclerViewAdapter(private val coronaQuestionsAndAnswers: List<Information>) : RecyclerView.Adapter<InformationRecyclerViewAdapter.ViewHolder>() {
@@ -18,8 +18,18 @@ class InformationRecyclerViewAdapter(private val coronaQuestionsAndAnswers: List
 
     init {
         mOnClickListener = View.OnClickListener { v ->
-            v.tv_imformation_body.visibility = if( v.tv_imformation_body.visibility == View.GONE) View.VISIBLE else View.GONE
+            val item = v.tag as Information
+
+            v.tv_imformation_body.visibility = if( v.tv_imformation_body.visibility == View.GONE) {
+                item.isVisible = true
+                View.VISIBLE
+            } else {
+                item.isVisible = false
+                View.GONE
+            }
+
             v.img_chevron.setImageDrawable(ResourcesCompat.getDrawable(v.resources, if( v.tv_imformation_body.visibility == View.GONE) R.drawable.ic_keyboard_arrow_up else R.drawable.ic_arrow_down, null))
+
         }
     }
 
@@ -36,7 +46,7 @@ class InformationRecyclerViewAdapter(private val coronaQuestionsAndAnswers: List
 
     override fun getItemCount(): Int = coronaQuestionsAndAnswers.size
 
-    inner class ViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
+    inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         private val cardTitle: TextView = view.tv_information_header
         private val cardBody: TextView = view.tv_imformation_body
 
@@ -44,7 +54,9 @@ class InformationRecyclerViewAdapter(private val coronaQuestionsAndAnswers: List
             cardTitle.text = item.title
             cardBody.text = item.information
 
-            with(view) {
+            cardBody.visibility = if(item.isVisible) View.VISIBLE else View.GONE
+
+            with(itemView) {
                 tag = item
                 setOnClickListener(mOnClickListener)
             }
