@@ -7,14 +7,20 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="za.co.dubedivine.androidapps.cory.activity.main.MainFragment"
+        android:name="za.co.dubedivine.androidapps.cory.feature.main.activity.MainFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_main" />
 
     <fragment
         android:id="@+id/navigation_information"
-        android:name="za.co.dubedivine.androidapps.cory.activity.information.InformationFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_information_list" />
+        android:name="za.co.dubedivine.androidapps.cory.feature.information.activity.InformationFragment"
+        android:label="@string/title_information"
+        tools:layout="@layout/fragment_about" />
+
+    <fragment
+        android:id="@+id/navigation_about"
+        android:name="za.co.dubedivine.androidapps.cory.feature.about.activity.AboutFragment"
+        android:label="@string/title_about"
+        tools:layout="@layout/fragment_about" />
 
 </navigation>

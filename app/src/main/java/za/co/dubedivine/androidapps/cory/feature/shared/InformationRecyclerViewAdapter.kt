@@ -1,12 +1,10 @@
-package za.co.dubedivine.androidapps.cory.activity.information
+package za.co.dubedivine.androidapps.cory.feature.shared
 
-import android.icu.text.IDNA
 import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.content.res.ResourcesCompat
 import kotlinx.android.synthetic.main.item_fragment_information.view.*
 import za.co.dubedivine.androidapps.cory.R

@@ -1,4 +1,4 @@
-package za.co.dubedivine.androidapps.cory.activity.main
+package za.co.dubedivine.androidapps.cory.feature.main.activity
 
 import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView

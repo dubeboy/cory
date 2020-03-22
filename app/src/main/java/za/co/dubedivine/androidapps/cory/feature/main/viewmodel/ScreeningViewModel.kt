@@ -1,4 +1,4 @@
-package za.co.dubedivine.androidapps.cory.viewmodel
+package za.co.dubedivine.androidapps.cory.feature.main.viewmodel
 
 import za.co.dubedivine.androidapps.cory.model.ScreeningQuestion
 import za.co.dubedivine.androidapps.cory.model.screeningdecisiontree.ScreeningNode

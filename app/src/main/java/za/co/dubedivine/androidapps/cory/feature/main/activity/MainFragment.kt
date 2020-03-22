@@ -1,4 +1,4 @@
-package za.co.dubedivine.androidapps.cory.activity.main
+package za.co.dubedivine.androidapps.cory.feature.main.activity
 
 import android.os.Bundle
 import android.util.Log
@@ -9,14 +9,15 @@ import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.fragment_main.*
 import kotlinx.android.synthetic.main.fragment_main.view.*
 import za.co.dubedivine.androidapps.cory.R
-import za.co.dubedivine.androidapps.cory.activity.result.ResultsActivity
-import za.co.dubedivine.androidapps.cory.viewmodel.ScreeningViewModel
+import za.co.dubedivine.androidapps.cory.feature.result.ResultsActivity
+import za.co.dubedivine.androidapps.cory.feature.main.viewmodel.ScreeningViewModel
 
 class MainFragment : Fragment() {
 
     private val TAG = "MainActivity"
 
-    private val viewModel = ScreeningViewModel()
+    private val viewModel =
+        ScreeningViewModel()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_main, container, false)

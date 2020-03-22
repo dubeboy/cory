@@ -1,4 +1,4 @@
-package za.co.dubedivine.androidapps.cory.activity.result
+package za.co.dubedivine.androidapps.cory.feature.result
 
 import android.content.Context
 import android.content.Intent

@@ -1,4 +1,4 @@
-package za.co.dubedivine.androidapps.cory.activity.information
+package za.co.dubedivine.androidapps.cory.feature.information.activity
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,12 +8,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import za.co.dubedivine.androidapps.cory.R
+import za.co.dubedivine.androidapps.cory.feature.shared.InformationRecyclerViewAdapter
 
-import za.co.dubedivine.androidapps.cory.viewmodel.InformationViewModel
+import za.co.dubedivine.androidapps.cory.feature.information.viewmodel.InformationViewModel
 
 class InformationFragment : Fragment() {
 
-    private val viewModel = InformationViewModel()
+    private val viewModel =
+        InformationViewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

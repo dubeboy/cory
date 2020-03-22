@@ -1,4 +1,4 @@
-package za.co.dubedivine.androidapps.cory.viewmodel
+package za.co.dubedivine.androidapps.cory.feature.information.viewmodel
 
 import za.co.dubedivine.androidapps.cory.model.Information
 import za.co.dubedivine.androidapps.cory.repository.local.InformationRepository
