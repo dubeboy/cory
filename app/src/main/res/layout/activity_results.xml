@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/negative"
-    tools:context=".activity.ResultsActivity">
+    tools:context=".activity.result.ResultsActivity">
 
     <TextView
         android:id="@+id/tv_what_to_do_next_instructions"

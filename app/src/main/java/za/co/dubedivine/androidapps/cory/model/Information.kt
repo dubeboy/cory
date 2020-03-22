@@ -1,4 +1,3 @@
 package za.co.dubedivine.androidapps.cory.model
 
-class Information {
-}
+data class Information(val title: String, val information: String)

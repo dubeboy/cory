@@ -17,6 +17,9 @@ class ScreeningViewModel {
         decisionTree = nextNode  // should be in ADT mananger
         return nextNode?.parent
     }
+
     fun canContinue(answer: Boolean) = decisionTree?.isTerminal(answer) == false
+
+    fun numberOfQuestionLeft(): Int = ScreeningQuestionsRepository.screeningQuestions.size
 
 }

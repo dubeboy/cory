@@ -7,4 +7,8 @@
     <string name="negative">STAY AT HOME</string>
     <string name="speak_to_a_nurse">You should speak with a nurse about your symptoms.</string>
     <string name="isolate_your_self_for_14_days">You should immediately limit your contact with others and isolate yourself at home.</string>
+    <string name="title_home">Home</string>
+    <string name="title_notifications">Information</string>
+    <string name="collapse_information_card">collapse information card</string>
+
 </resources>

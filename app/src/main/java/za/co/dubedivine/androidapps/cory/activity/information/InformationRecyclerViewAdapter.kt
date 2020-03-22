@@ -1,36 +1,25 @@
-package za.co.dubedivine.androidapps.cory.activity
+package za.co.dubedivine.androidapps.cory.activity.information
 
 import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import za.co.dubedivine.androidapps.cory.R
-
-
-import za.co.dubedivine.androidapps.cory.activity.InformationFragment.OnListFragmentInteractionListener
-import za.co.dubedivine.androidapps.cory.activity.dummy.DummyContent.DummyItem
-
+import androidx.appcompat.content.res.AppCompatResources
+import androidx.core.content.res.ResourcesCompat
 import kotlinx.android.synthetic.main.item_fragment_information.view.*
+import za.co.dubedivine.androidapps.cory.R
+import za.co.dubedivine.androidapps.cory.activity.information.dummy.DummyContent.DummyItem
+import za.co.dubedivine.androidapps.cory.model.Information
 
-/**
- * [RecyclerView.Adapter] that can display a [DummyItem] and makes a call to the
- * specified [OnListFragmentInteractionListener].
- * TODO: Replace the implementation with code for your data type.
- */
-class InformationRecyclerViewAdapter(
-    private val mValues: List<DummyItem>,
-    private val mListener: OnListFragmentInteractionListener?
-) : RecyclerView.Adapter<InformationRecyclerViewAdapter.ViewHolder>() {
+class InformationRecyclerViewAdapter(private val coronaQuestionsAndAnswers: List<Information>) : RecyclerView.Adapter<InformationRecyclerViewAdapter.ViewHolder>() {
 
     private val mOnClickListener: View.OnClickListener
 
     init {
         mOnClickListener = View.OnClickListener { v ->
-            val item = v.tag as DummyItem
-            // Notify the active callbacks interface (the activity, if the fragment is attached to
-            // one) that an item has been selected.
-            mListener?.onListFragmentInteraction(item)
+            v.tv_imformation_body.visibility = if( v.tv_imformation_body.visibility == View.GONE) View.VISIBLE else View.GONE
+            v.img_chevron.setImageDrawable(ResourcesCompat.getDrawable(v.resources, if( v.tv_imformation_body.visibility == View.GONE) R.drawable.ic_keyboard_arrow_up else R.drawable.ic_arrow_down, null))
         }
     }
 
@@ -41,24 +30,24 @@ class InformationRecyclerViewAdapter(
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val item = mValues[position]
-        holder.mIdView.text = item.id
-        holder.mContentView.text = item.content
-
-        with(holder.mView) {
-            tag = item
-            setOnClickListener(mOnClickListener)
-        }
+        val item = coronaQuestionsAndAnswers[position]
+        holder.bind(item)
     }
 
-    override fun getItemCount(): Int = mValues.size
+    override fun getItemCount(): Int = coronaQuestionsAndAnswers.size
 
-    inner class ViewHolder(val mView: View) : RecyclerView.ViewHolder(mView) {
-        val mIdView: TextView = mView.item_number
-        val mContentView: TextView = mView.content
+    inner class ViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
+        private val cardTitle: TextView = view.tv_information_header
+        private val cardBody: TextView = view.tv_imformation_body
 
-        override fun toString(): String {
-            return super.toString() + " '" + mContentView.text + "'"
+        fun bind(item: Information) {
+            cardTitle.text = item.title
+            cardBody.text = item.information
+
+            with(view) {
+                tag = item
+                setOnClickListener(mOnClickListener)
+            }
         }
     }
 }

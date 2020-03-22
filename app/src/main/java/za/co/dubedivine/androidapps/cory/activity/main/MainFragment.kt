@@ -7,8 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.fragment_main.*
+import kotlinx.android.synthetic.main.fragment_main.view.*
 import za.co.dubedivine.androidapps.cory.R
-import za.co.dubedivine.androidapps.cory.activity.ResultsActivity
+import za.co.dubedivine.androidapps.cory.activity.result.ResultsActivity
 import za.co.dubedivine.androidapps.cory.viewmodel.ScreeningViewModel
 
 private const val ARG_PARAM1 = "param1"
@@ -35,17 +36,23 @@ class MainFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_main, container, false)
 
-        tv_question.text = viewModel.question?.question ?: ""
+        view.tv_question.text = viewModel.question?.question ?: ""
 
-        btn_yes.setOnClickListener {
+        view.btn_yes.setOnClickListener {
             nextQuestion(true)
         }
 
-        btn_no.setOnClickListener {
+        view.btn_no.setOnClickListener {
             nextQuestion(false)
         }
 
         return view
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+
     }
 
     private fun nextQuestion(answer: Boolean) {

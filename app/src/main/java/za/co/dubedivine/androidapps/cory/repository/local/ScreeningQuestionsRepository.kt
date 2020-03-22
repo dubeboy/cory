@@ -16,7 +16,7 @@ object ScreeningQuestionsRepository {
         "All international travellers are asked to self-isolate and self-monitor for symptoms"
     )
 
-    private val screeningQuestions = arrayOf(
+    val screeningQuestions = arrayOf(
         ScreeningQuestion(
             "Do you or the person you are inquiring about have any of the following symptoms: severe difficulty breathing, chest pain, confusion, extreme drowsiness or loss of consciousness?",
             1.0
