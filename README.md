@@ -13,7 +13,7 @@ Benefits are that you keep your self quarantined so that you do not spread the d
 1. New feature?
    1. Add a new [github issue!](https://github.com/dubeboy/cory/issues) 
   
-# Screensshots
+# Screenshots
 
 Screening Tool |  COVID-19 FAQ  |  About App   |
 -------------- | -------------- | ------------ |
