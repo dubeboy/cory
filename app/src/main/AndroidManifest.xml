@@ -9,8 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="za.co.dubedivine.androidapps.cory.feature.result.ResultsActivity" />
-        <activity android:name="za.co.dubedivine.androidapps.cory.feature.main.activity.MainActivity">
+        <activity android:name=".feature.shared.InfrmationDialog"></activity>
+        <activity android:name=".feature.result.ResultsActivity" />
+        <activity android:name=".feature.main.activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

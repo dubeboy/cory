@@ -42,12 +42,12 @@ object ScreeningQuestionsRepository {
             6.0
         ),
         ScreeningQuestion(
-            "Have you travelled outside of Canada, including to the United States, in the last 14 days?",
+            "Have you travelled outside the borders of your country in the last 14 days?",
             7.0
         ),
 
         ScreeningQuestion(
-            "Have you had close contact (face-to-face contact within 2 meters/6 feet) with someone who is ill with cough and/or fever that traveled outside of Canada within the last 14 days prior to feeling ill?",
+            "Have you had close contact (face-to-face contact within 2 meters/6 feet) with someone who is ill with cough and/or fever that traveled outside of your country within the last 14 days prior to feeling ill?",
             8.0
         ),
         ScreeningQuestion(

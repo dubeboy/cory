@@ -24,6 +24,14 @@ class AboutFragment : Fragment() {
             adapter = InformationRecyclerViewAdapter(viewModel.aboutAppInformation)
         }
 
+        view.btn_rate_app.setOnClickListener {
+            rateOnPlayStore()
+        }
+
         return view
+    }
+
+    private fun rateOnPlayStore() {
+        // todo open play store
     }
 }

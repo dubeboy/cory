@@ -7,11 +7,11 @@ object AboutRepository {
         return arrayOf(
             Information(
                 "About this app",
-                "This app helps you"
+                "This app can help you verify if your symptons are those of the novel coronavirus.\n\nBenefits are that you keep your self quarantined so that you do not spread the disease or worse catch it in the process of going to the hospital for a check up."
             ),
             Information(
                 "Information sources",
-                "WHO: http:saddens.com\nCnadian website: http://dsdsdsds.com"
+                "Screening Tool: https://sharedhealthmb.ca/covid19/screening-tool/\n\nCOVID-19 Q&A: https://www.who.int/emergencies/diseases/novel-coronavirus-2019"
             ),
              Information(
                 "App Source Code",
