@@ -14,8 +14,8 @@ object AboutRepository {
                 "Screening Tool: https://sharedhealthmb.ca/covid19/screening-tool/\n\nCOVID-19 Q&A: https://www.who.int/emergencies/diseases/novel-coronavirus-2019"
             ),
              Information(
-                "App Source Code",
-                "github.com/dubeboy"
+                "App Open Source Code",
+                "https://github.com/dubeboy/cory/"
             )
         )
     }
