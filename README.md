@@ -1,5 +1,5 @@
 # Cory
-Covid-19 app: This app can help you verify if your symptons are those of the novel coronavirus.
+Covid-19 app: This app aims to help you verify if your symptons are those of the novel coronavirus so that you can better decide wheather you need to see the doctor or stay at home therefore further helpig minimise the sprease of the virus.
 
 Benefits are that you keep your self quarantined so that you do not spread the disease or worse catch it in the process of going to the hospital for a check up. 
 * This app has a screening tool from https://sharedhealthmb.ca/covid19/screening-tool/
